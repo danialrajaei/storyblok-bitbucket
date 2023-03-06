@@ -35,7 +35,7 @@ export const triggerPipeline = async () => {
             target: {
                 ref_type: "branch",
                 type: "pipeline_ref_target",
-                ref_name: branch ?? "main"
+                ref_name: "main"
             },
             type: ''
         },
