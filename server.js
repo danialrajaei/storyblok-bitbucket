@@ -7,7 +7,9 @@ logger.level = 'info'
 const app = express()
 const port = 3000
 
-app.post('/webhook/:webhook?', webhookHandler, (req, res) => {
+app.use(express.json());
+
+app.post('/webhook', webhookHandler, (req, res) => {
   const webhookBody = req.body;
   if (!webhookBody) {
     return res.status(HttpStatusCode.BAD_REQUEST);
